@@ -1,0 +1,100 @@
+﻿@model CaseApp.Web.Models.ContentViewModel
+
+@{
+    ViewData["Title"] = "HomePage";
+}
+
+<h6>Homepage</h6>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <select asp-for="PSpeak" class="form-control">
+                <option value="" disabled selected hidden>Please Choose...</option>
+                <option value="yoda">Yoda</option>
+                <option value="pirate">Pirate</option>
+                <option value="valspeak">Valspeak</option>
+                <option value="minion">Minion</option>
+                <option value="ferb-latin">Ferb-latin</option>
+                <option value="pig-latin">Pig-latin</option>
+                <option value="dothraki">Dothraki</option>
+                <option value="valyrian">Valyrian</option>
+                <option value="hodor">Hodor</option>
+                <option value="sindarin">Sindarin</option>
+                <option value="quenya">Quenya</option>
+                <option value="orcish">Orcish</option>
+                <option value="sith">Sith</option>
+                <option value="cheunh">Cheunh</option>
+                <option value="gungan">Gungan</option>
+                <option value="mandalorian">Mandalorian</option>
+                <option value="huttese">Huttese</option>
+                <option value="chef">Chef</option>
+                <option value="catalan">Catalan</option>
+                <option value="oldenglish">Oldenglish</option>
+                <option value="shakespeare">Shakespeare</option>
+                <option value="vulcan">Vulcan</option>
+                <option value="klingon">Klingon</option>
+                <option value="romulan">Romulan</option>
+                <option value="dovahzul">Dovahzul</option>
+                <option value="thuum">Thuum</option>
+                <option value="aldmeris">Aldmeris</option>
+                <option value="groot">Groot</option>
+                <option value="jive">Jive</option>
+                <option value="ebonics">Ebonics</option>
+                <option value="dolan">Dolan</option>
+                <option value="fudd">Fudd</option>
+                <option value="kraut">Kraut</option>
+                <option value="wow">Wow</option>
+                <option value="cockney">Cockney</option>
+                <option value="norfolk">Norfolk</option>
+                <option value="morse">Morse</option>
+                <option value="us2uk">Us2uk</option>
+                <option value="uk2us">Uk2us</option>
+                <option value="leetspeak">Leetspeak</option>
+                <option value="brooklyn">Brooklyn</option>
+                <option value="ermahgerd">Ermahgerd</option>
+                <option value="australian">Australian</option>
+                <option value="boston">Boston</option>
+                <option value="austrian">Austrian</option>
+                <option value="article_rewrite">Article_rewrite</option>
+                <option value="braille">Braille</option>
+                <option value="numbers">Numbers</option>
+                <option value="emoji">Emoji</option>
+                <option value="doge">Doge</option>
+                <option value="navi">Navi</option>
+                <option value="southern-accent">Southern-accent</option>
+                <option value="ubbi-dubbi">Ubbi-dubbi</option>
+                <option value="inflationary-english">Inflationary-english</option>
+                <option value="george-bush-dubya">George-bush-dubya</option>
+                <option value="post-modern">Post-modern</option>
+                <option value="ayleidoon">Ayleidoon</option>
+                <option value="redneck">Redneck</option>
+                <option value="roman-numerals">Roman-numerals</option>
+                <option value="asian-accent">Asian-accent</option>
+                <option value="russian-accent">Russian-accent</option>
+                <option value="english-contraction">English-contraction</option>
+                <option value="irish">Irish</option>
+                <option value="british">British</option>
+                <option value="german-accent">German-accent</option>
+                <option value="draconic">Draconic</option>
+                <option value="enderman">Enderman</option>
+                <option value="wheel-of-time-old-tongue">Wheel-of-time-old-tongue</option>
+            </select>
+            <br />
+            <div class="form-group">
+                <textarea asp-for="PText" class="form-control" style="height:300px; width:800px"></textarea>
+                <span asp-validation-for="PText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Convert" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<h5>@ViewBag.Text</h5>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
